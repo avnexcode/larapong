@@ -28,7 +28,6 @@ class UTSController extends Controller
             "semester" => $req->semester,
         ];
         UTS::create($mahasiswa);
-        return redirect('/uts/create');
-        // ->session('kunci', 'Data Mahasiswa Berhasil Ditambahkan.')
+        return redirect('/uts/create')->with('kunci', 'Data Mahasiswa Berhasil Ditambahkan.');
     }
 }
