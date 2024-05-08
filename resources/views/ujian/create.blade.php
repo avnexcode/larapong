@@ -6,6 +6,7 @@
             <h1 class="text-2xl font-bold">Tambahkan Data Mahasiswa</h1>
 
             <form action="" method="POST" class="w-full px-[100px]">
+                @csrf
                 @if (Session::has('kunci'))
                     <div role="alert" class="alert alert-success mb-5">
                         <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none"
@@ -16,7 +17,6 @@
                         <span>{{ Session::get('kunci') }}</span>
                     </div>
                 @endif
-                @csrf
                 <div class="flex justify-center mb-5">
                     <input type="text" placeholder="Nama Lengkap" class="input input-bordered w-full max-w-full"
                         name="nama_lengkap" id="nama_lengkap" autocomplete="off" />
@@ -73,10 +73,14 @@
                         </div>
                     @endforeach
                 @else
-                <div role="alert" class="alert alert-info">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-current shrink-0 w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    <span>Data Mahasiswa Kosong</span>
-                  </div>
+                    <div role="alert" class="alert alert-info">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            class="stroke-current shrink-0 w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span>Data Mahasiswa Kosong</span>
+                    </div>
                 @endif
             </div>
         </div>
